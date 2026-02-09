@@ -1,0 +1,85 @@
+---
+title: "Trabajo Aprendizaje Automático"
+author: "María Cristina Quintana Sevajanes, Alejandro Álvarez Segoviano, Francisco Javier"
+format: 
+  html:
+    toc: true
+    toc-location: left  
+    code-fold: true      
+    theme: cosmo
+editor: visual
+---
+
+# 1. PRESENTACIÓN Y DESCRIPCIÓN DEL DATASET
+
+Dataset: <https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators>
+
+## INTRODUCCIÓN
+
+La diabetes es una enfermedad crónica grave en la que el cuerpo no puede regular la glucosa en sangre, lo que puede causar daños severos al corazón, los riñones y la visión. Debido a que no tiene cura, la prevención mediante hábitos saludables y el diagnóstico temprano a través de modelos predictivos son fundamentales para reducir su impacto en la calidad y esperanza de vida.
+
+Esta base de datos utiliza una versión procesada del Sistema de Vigilancia de Factores de Riesgo Conductual (BRFSS) de los CDC del año 2015. El dataset contiene información de 253,680 individuos y se centra en 21 variables predictoras que abarcan datos demográficos, indicadores físicos (como el IMC) y hábitos de vida (consumo de frutas, verduras y actividad física).
+
+La variable objetivo, `Diabetes_012`, clasifica a los participantes en tres categorías: sano, prediabético o diabético. Cabe destacar que el conjunto de datos no contiene valores faltantes y que la muestra fue recogida en Estados Unidos.
+
+## DESCRIPCIÓN DE VARIABLES
+
+1.  **Diabetes_012:** Variable objetivo, clasifica a los entrevistados en tres categorías: 0 = no diabetes, 1 = prediabetes y 2 = diabetes.
+
+2.  **HighBP:** Variable binaria que indica si el encuestado tiene presión arterial alta (0 = no, 1 = sí).
+
+3.  **HighChol:** Variable binaria que indica si el encuestado tiene colesterol alto (0 = no, 1 = sí).
+
+4.  **CholCheck:** Variable binaria que indica si el encuestado ha pasado por un control de colesterol en los últimos 5 años ( 0 = sin control de colesterol en los últimos 5 años, 1 = comprobación de colesterol en los últimos 5 años).
+
+5.  **BMI (Body Mass Index):** Variable numérica entera que indica el índice de masa corporal del encuestado. En adultos, se interpreta como:
+
+    -   Menos de 18,5 -\> Bajo peso
+
+    -   18,5 - 24.9 -\> Peso normal
+
+    -   25.0 - 29.9 -\> Sobrepeso
+
+    -   30.0 - 34.9 -\> Obesidad grado I
+
+    -   35.0 - 39.9 -\> Obesidad grado II
+
+    -   40 o más -\> Obesidad grado III
+
+6.  **Smoker:** Variable binaria que responde a la pregunta: ¿Has fumado al menos 100 cigarrillos(5 paquetes) en toda tu vida? (0 = no, 1 = sí).
+
+7.  **Stroke:** Variable binaria que responde a la pregunta: ¿Alguna vez tuviste un derrame cerebral? (0 = no, 1 = sí).
+
+8.  **HeartDiseaseorAttack:** Variable binaria que indica si el encuestado padece una enfermedad coronaria (ED) o ha tenido un infarto de miocardio (IM). (0 = no, 1 = sí).
+
+9.  **PhysActivity:** Variable binaria que indica si el encuestado a tenido actividad física en los últimos 30 días, sin contar el trabajo (0 = no, 1 = sí).
+
+10. **Fruits:** Variable binaria que indica si el encuestado consume frutas una o más veces al día (0 = no, 1 = sí).
+
+11. **Veggies:** Variable binaria que indica si el encuestado consume verduras una o más veces al día (0 = no, 1 = sí).
+
+12. **HvyAlcoholConsump:** Variable binaria que indica si el encuestado bebe alcohol de manera excesiva. En este caso, hombres adultos que toman más de 14 copas a la semana y mujeres adultas que beben más de 7 copas por semana (0 = no 1 = sí).
+
+13. **AnyHealthcare:** Variable binaria que indica si el encuestado tiene algún tipo de cobertura sanitaria, incluyendo seguro médico, planes prepago como HMO, etc (0 = no, 1 = sí).
+
+14. **NoDocbcCost:** Variable binaria que responde a la pregunta: ¿Hubo algún momento en los últimos 12 meses en el que tuviste que ver a un médico pero no pudiste por el coste?. El número 0 indica que no y el número 1 que sí.
+
+15. **GenHlth:** Variable categórica ordinal que muestra el estado de salud que el encuestado considera que posee. Siendo 1 = excelente, 2 = muy bueno, 3 = bueno, 4 = justo, 5 = pobre.
+
+16. **MentHlth:** Variable categórica ordinal que indica cuántos días en los últimos 30 días el encuestado ha tenido mala salud mental, incluyendo estrés, depresión y problemas emocionales (escala 0-30).
+
+17. **PhysHlth:** Variable categórica ordinal que indica cuántos días en los últimos 30 días el encuestado ha tenido mala salud física, incluyendo enfermedades y lesiones (escala 0-30).
+
+18. **DiffWalk:** Variable binaria que indica si el encuestado tiene dificultades para caminar o subir escaleras (0 = no, 1 = sí).
+
+19. **Sex:** Variable binaria que codifica numéricamente el género de los participantes (0 = femenino, 1 = masculino).
+
+20. **Age:** Variable categórica ordinal que codifica tramos de edad: 18 - 24 años = 1, 60 - 64 = 9 y 80+ = 13.
+
+21. **Education:** Variable categórica ordinal que codifica numéricamente el máximo nivel educativo alcanzado. Codificación: 1 = Nunca asistió a la escuela o solo al jardín de infancia; 2 = Cursos 1 a 8 (Primaria); 3 = Cursos 9 a 11 (Algunos cursos de secundaria); 4 = 12º curso o GED (Graduado de secundaria); 5 = Universidad de 1 a 3 años (Alguna universidad o escuela técnica); 6 = Universidad 4 años o más (Graduado Universitario).
+
+22.  **Income:** Variable categórica ordinal que codifica numéricamente los ingresos del encuestado. Codificación: 1 = menos de 10.000\$; 5 = menos de 35.000\$; 8 = 75.000\$ o más.
+
+# 2. LIMPIEZA DE DATOS
+
+// Valor atípico: BMI = 98.
