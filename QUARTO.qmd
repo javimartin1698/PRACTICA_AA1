@@ -24,15 +24,15 @@ La variable objetivo, `Diabetes_012`, clasifica a los participantes en tres cate
 
 ## DESCRIPCIÓN DE VARIABLES
 
-1.  **Diabetes_012:** Variable objetivo, clasifica a los entrevistados en tres categorías: 0 = no diabetes, 1 = prediabetes y 2 = diabetes.
+1.  **Diabetes_012 (Variable Objetivo):** Variable categórica ordinal, clasifica a los entrevistados en tres categorías: 0 = no diabetes, 1 = prediabetes y 2 = diabetes.
 
 2.  **HighBP:** Variable binaria que indica si el encuestado tiene presión arterial alta (0 = no, 1 = sí).
 
 3.  **HighChol:** Variable binaria que indica si el encuestado tiene colesterol alto (0 = no, 1 = sí).
 
-4.  **CholCheck:** Variable binaria que indica si el encuestado ha pasado por un control de colesterol en los últimos 5 años ( 0 = sin control de colesterol en los últimos 5 años, 1 = comprobación de colesterol en los últimos 5 años).
+4.  **CholCheck:** Variable binaria que indica si el encuestado se ha realizado un control de colesterol en los últimos 5 años (0 = no, 1 = sí).
 
-5.  **BMI (Body Mass Index):** Variable numérica entera que indica el índice de masa corporal del encuestado. En adultos, se interpreta como:
+5.  **BMI (Body Mass Index):** Variable numérica entera que indica el índice de masa corporal del encuestado. Se utiliza para categorizar el estado de peso corporal en adultos de la siguiente manera:
 
     -   Menos de 18,5 -\> Bajo peso
 
@@ -46,39 +46,39 @@ La variable objetivo, `Diabetes_012`, clasifica a los participantes en tres cate
 
     -   40 o más -\> Obesidad grado III
 
-6.  **Smoker:** Variable binaria que responde a la pregunta: ¿Has fumado al menos 100 cigarrillos(5 paquetes) en toda tu vida? (0 = no, 1 = sí).
+6.  **Smoker:** Variable binaria que indica si el encuestado ha fumado al menos 100 cigarrillos en toda su vida (0 = no, 1 = sí).
 
-7.  **Stroke:** Variable binaria que responde a la pregunta: ¿Alguna vez tuviste un derrame cerebral? (0 = no, 1 = sí).
+7.  **Stroke:** Variable binaria que indica si el encuestado ha sufrido un derrame cerebral (0 = no, 1 = sí).
 
-8.  **HeartDiseaseorAttack:** Variable binaria que indica si el encuestado padece una enfermedad coronaria (ED) o ha tenido un infarto de miocardio (IM). (0 = no, 1 = sí).
+8.  **HeartDiseaseorAttack:** Variable binaria que indica si el encuestado padece una enfermedad coronaria (EC) o ha tenido un infarto de miocardio (IM) (0 = no, 1 = sí).
 
-9.  **PhysActivity:** Variable binaria que indica si el encuestado a tenido actividad física en los últimos 30 días, sin contar el trabajo (0 = no, 1 = sí).
+9.  **PhysActivity:** Variable binaria que indica si el encuestado ha realizado actividad física o ejercicio en los últimos 30 días, excluyendo las tareas del trabajo habitual (0 = no, 1 = sí).
 
 10. **Fruits:** Variable binaria que indica si el encuestado consume frutas una o más veces al día (0 = no, 1 = sí).
 
 11. **Veggies:** Variable binaria que indica si el encuestado consume verduras una o más veces al día (0 = no, 1 = sí).
 
-12. **HvyAlcoholConsump:** Variable binaria que indica si el encuestado bebe alcohol de manera excesiva. En este caso, hombres adultos que toman más de 14 copas a la semana y mujeres adultas que beben más de 7 copas por semana (0 = no 1 = sí).
+12. **HvyAlcoholConsump:** Variable binaria que indica si el encuestado consume alcohol de manera excesiva (Hombres: \>14 bebidas/semana; Mujeres: \>7 bebidas/semana). (0 = no, 1 = sí).
 
-13. **AnyHealthcare:** Variable binaria que indica si el encuestado tiene algún tipo de cobertura sanitaria, incluyendo seguro médico, planes prepago como HMO, etc (0 = no, 1 = sí).
+13. **AnyHealthcare:** Variable binaria que indica si el encuestado tiene algún tipo de cobertura sanitaria, incluyendo seguro médico o planes prepago (0 = no, 1 = sí).
 
-14. **NoDocbcCost:** Variable binaria que responde a la pregunta: ¿Hubo algún momento en los últimos 12 meses en el que tuviste que ver a un médico pero no pudiste por el coste?. El número 0 indica que no y el número 1 que sí.
+14. **NoDocbcCost:** Variable binaria que indica si el encuestado necesitó ver a un médico en los últimos 12 meses pero no pudo hacerlo debido al costo (0 = no, 1 = sí).
 
-15. **GenHlth:** Variable categórica ordinal que muestra el estado de salud que el encuestado considera que posee. Siendo 1 = excelente, 2 = muy bueno, 3 = bueno, 4 = justo, 5 = pobre.
+15. **GenHlth:** Variable categórica ordinal de autopercepción de salud, donde 1 representa un estado excelente y 5 un estado pobre.
 
-16. **MentHlth:** Variable categórica ordinal que indica cuántos días en los últimos 30 días el encuestado ha tenido mala salud mental, incluyendo estrés, depresión y problemas emocionales (escala 0-30).
+16. **MentHlth:** Variable numérica discreta que indica cuántos días, dentro de los últimos 30, el encuestado ha experimentado una mala salud mental (incluyendo estrés, depresión y problemas emocionales). Escala de 0 a 30.
 
-17. **PhysHlth:** Variable categórica ordinal que indica cuántos días en los últimos 30 días el encuestado ha tenido mala salud física, incluyendo enfermedades y lesiones (escala 0-30).
+17. **PhysHlth:** Variable numérica discreta que indica cuántos días, dentro de los últimos 30, el encuestado ha experimentado una mala salud física (incluyendo enfermedades y lesiones). Escala de 0 a 30.
 
-18. **DiffWalk:** Variable binaria que indica si el encuestado tiene dificultades para caminar o subir escaleras (0 = no, 1 = sí).
+18. **DiffWalk:** Variable binaria que indica si el encuestado tiene una dificultad seria para caminar o subir escaleras (0 = no, 1 = sí).
 
-19. **Sex:** Variable binaria que codifica numéricamente el género de los participantes (0 = femenino, 1 = masculino).
+19. **Sex:** Variable binaria que codifica el género del encuestado (0 = femenino, 1 = masculino).
 
-20. **Age:** Variable categórica ordinal que codifica tramos de edad: 18 - 24 años = 1, 60 - 64 = 9 y 80+ = 13.
+20. **Age:** Variable categórica ordinal que codifica la edad de los participantes en 13 tramos de cinco años. La escala comienza en el valor 1 para el rango de 18 a 24 años, progresa de forma ascendente (ej. nivel 9 para el tramo de 60 a 64 años) y finaliza en el valor 13 para personas de 80 años o más.
 
-21. **Education:** Variable categórica ordinal que codifica numéricamente el máximo nivel educativo alcanzado. Codificación: 1 = Nunca asistió a la escuela o solo al jardín de infancia; 2 = Cursos 1 a 8 (Primaria); 3 = Cursos 9 a 11 (Algunos cursos de secundaria); 4 = 12º curso o GED (Graduado de secundaria); 5 = Universidad de 1 a 3 años (Alguna universidad o escuela técnica); 6 = Universidad 4 años o más (Graduado Universitario).
+21. **Education:** Variable categórica ordinal que representa el nivel educativo máximo alcanzado. Se codifica del 1 al 6 de la siguiente manera: 1 para quienes nunca asistieron a la escuela; 2 para educación primaria (grados 1-8); 3 para secundaria incompleta (grados 9-11); 4 para graduados de secundaria o equivalente (GED); 5 para educación universitaria o técnica incompleta; y 6 para graduados universitarios con estudios de cuatro años o más.
 
-22.  **Income:** Variable categórica ordinal que codifica numéricamente los ingresos del encuestado. Codificación: 1 = menos de 10.000\$; 5 = menos de 35.000\$; 8 = 75.000\$ o más.
+22.  **Income:** Variable categórica ordinal que codifica el nivel de ingresos anuales del hogar del encuestado en una escala de 8 niveles. La codificación representa rangos crecientes de poder adquisitivo, donde el valor 1 indica ingresos inferiores a 10.000\$, el nivel 5 representa ingresos menores de 35.000\$, y el valor máximo 8 identifica a quienes perciben 75.000\$ o más.
 
 # 2. LIMPIEZA DE DATOS
 
